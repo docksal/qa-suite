@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+## Run Behat v3.x
+##
+## Usage: fin behat3
+
+
 # Console colors
 red='\033[0;31m'
 green='\033[0;32m'

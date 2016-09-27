@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+## Run an example Behat configuration
+##
+## Usage: fin behat-example
+
 # Console colors
 red='\033[0;31m'
 green='\033[0;32m'

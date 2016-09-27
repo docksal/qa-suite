@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+## Run an example BackstopJS configuration
+##
+## Usage: fin backstop-example
+
+# Abort if anything fails
+set -e
+
 # Console colors
 red='\033[0;31m'
 green='\033[0;32m'

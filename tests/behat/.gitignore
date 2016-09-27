@@ -12,3 +12,4 @@ screenshots/*
 
 # Reports (html, junit)
 reports
+!reports/.gitkeep

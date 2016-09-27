@@ -29,4 +29,4 @@ fin docker-compose run --rm backstop test --configPath=backstop-example.json
 # HTML report link
 echo
 echo -e "${green}To view HTML report open: ${NC}"
-echo -e "http://qa.docksal/tests/backstop/data/example/html_report/index.html"
+echo -e "http://qa.docksal/tests/backstop/data/example/reports/html/"

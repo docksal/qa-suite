@@ -22,3 +22,8 @@ fi
 # Run Behat
 cd $PROJECT_ROOT/tests/behat
 fin exec '~/.composer/local/vendor/bin/behat' --format=pretty --out=std --format=junit --out=reports/junit --format=html --out=reports/html "$@"
+
+# HTML report link
+echo
+echo -e "${green}To view HTML report open: ${NC}"
+echo -e "http://qa.docksal/tests/behat/reports/html/"

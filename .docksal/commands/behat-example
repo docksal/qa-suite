@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Console colors
+red='\033[0;31m'
+green='\033[0;32m'
+green_bg='\033[42m'
+yellow='\033[1;33m'
+NC='\033[0m'
+
+# Symlink reports html directory
+cd $PROJECT_ROOT
+if [[ ! -d "docroot/tests/behat" ]]; then
+	# Create symlink inside the cli container (this will not work if executed on Windows directly)
+	fin exec "mkdir -p docroot/tests;
+	ln -sf ../../tests/behat docroot/tests/behat;"
+fi
+
+# Run Behat
+cd $PROJECT_ROOT/tests/behat
+fin exec '~/.composer/local/vendor/bin/behat' --format=pretty --out=std --format=junit --out=reports/junit --format=html --out=reports/html "$@"

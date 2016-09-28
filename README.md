@@ -4,9 +4,11 @@ QA suite for running automated tests on websites, powered by Docksal.
 
 Features:
 
-- Behat 3.x
-- BackstopJS 2.x (Behat)
-- Selenium Chrome/Firefox
+- [Behat 3.x](https://github.com/Behat/Behat)
+- [BackstopJS 2.x](https://github.com/garris/BackstopJS)
+- [PhantomJS](http://phantomjs.org/), 
+[SlimerJS](https://slimerjs.org/) (with Firefox ESR), 
+[CasperJS](http://casperjs.org/)
 
 
 ## Setup instructions
@@ -67,6 +69,9 @@ fin behat3 features/blackbox.feature
     fin backstop test --configPath=backstop-example.json
     ```
 
+By default BackstopJS is using PhantomJS to take screenshots.  
+You can also use SlimerJS/Firefox by setting `"engine": "slimerjs"` 
+in the [configuration file](tests/backstop/backstop-example.json).
 
 ## Pre-configured sample commands 
 

@@ -18,15 +18,16 @@ RUN apk add --no-cache \
 COPY xvfb-run /usr/bin/xvfb-run
 
 ENV PHANTOMJS_VERSION 2.1.1
-ENV SLIMERJS_VERSION 0.10.1
 ENV CASPERJS_VERSION 1.1.3
+ENV SLIMERJS_VERSION 0.10.1
 
+# Installing dependencies from archives - not only this allows us to control versions, 
+# but the resulting image size is 130MB+ less (!) compared to an npm install (440MB vs 575MB).
 RUN \
 	mkdir -p /opt && \
 	# PhantomJS
-	echo "Downloading PhantomJS..." && \
-	curl -sL -O "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" && \
-	tar -jxf phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 && rm -f phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 && \
+	echo "Downloading PhantomJS v${PHANTOMJS_VERSION}..." && \
+	curl -sL "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" | tar jx && \
 	mv phantomjs-$PHANTOMJS_VERSION-linux-x86_64 /opt/phantomjs && \
 	ln -s /opt/phantomjs/bin/phantomjs /usr/bin/phantomjs && \
 	echo "Fixing PhantomJS on Alpine" && \
@@ -34,15 +35,14 @@ RUN \
 
 RUN \
 	# CasperJS
-	echo "Downloading CaperJS..." && \
-	curl -sL "https://github.com/casperjs/casperjs/archive/$CASPERJS_VERSION.zip" -o casperjs-$CASPERJS_VERSION.zip && \
-	unzip -q casperjs-$CASPERJS_VERSION.zip && rm -f casperjs-$CASPERJS_VERSION.zip && \
+	echo "Downloading CaperJS v${CASPERJS_VERSION}..." && \
+	curl -sL "https://github.com/casperjs/casperjs/archive/1.1.3.tar.gz" | tar zx && \
 	mv casperjs-$CASPERJS_VERSION /opt/casperjs && \
-	ln -s /opt/casperjs/casperjs /usr/bin/casperjs
+	ln -s /opt/casperjs/bin/casperjs /usr/bin/casperjs
 
 RUN \
 	# SlimerJS
-	echo "Downloading SlimerJS..." && \
+	echo "Downloading SlimerJS v${SLIMERJS_VERSION}..." && \
 	curl -sL -O "http://download.slimerjs.org/releases/$SLIMERJS_VERSION/slimerjs-$SLIMERJS_VERSION.zip" && \
 	unzip -q slimerjs-$SLIMERJS_VERSION.zip && rm -f slimerjs-$SLIMERJS_VERSION.zip && \
 	mv slimerjs-$SLIMERJS_VERSION /opt/slimerjs && \
@@ -51,8 +51,8 @@ RUN \
 	chmod +x /opt/slimerjs/slimerjs.sh && \
 	ln -s /opt/slimerjs/slimerjs.sh /usr/bin/slimerjs
 
-# BackstopJS and other
 RUN \
+	# BackstopJS
 	echo "Installing BackstopJS..." && \
 	npm install -g garris/backstopjs
 

@@ -45,15 +45,15 @@
     },
     {
       "label": "Failing Test",
+      "referenceUrl" : "https://www.google.com/?hl=en",
+      "url" : "https://www.google.com/?hl=ru",
       "selectors" : [
         "document"
       ],
       "delay" : 500,
       "misMatchThreshold" : 0.1,
       "onBeforeScript" : "",
-      "onReadyScript" : "",
-      "referenceUrl" : "https://www.google.com/?hl=en",
-      "url" : "https://www.google.com/?hl=ru"
+      "onReadyScript" : ""
     }
   ]
 }

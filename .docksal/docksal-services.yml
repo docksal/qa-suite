@@ -31,9 +31,3 @@ services:
   browser:
     hostname: browser
     image: selenium/standalone-chrome
-
-  # BackstopJS
-  backstop:
-    build: ../tests/backstop
-    volumes:
-      - "../tests/backstop:/src"

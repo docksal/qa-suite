@@ -25,9 +25,3 @@ services:
     extends:
       file: .docksal/docksal-services.yml
       service: browser
-
-  # BackstopJS
-  backstop:
-    extends:
-      file: .docksal/docksal-services.yml
-      service: backstop

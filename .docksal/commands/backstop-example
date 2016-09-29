@@ -20,8 +20,9 @@ if [[ ! -d "docroot/tests/backstop" ]]; then
 fi
 
 # Run backstop
-fin docker-compose run --rm backstop reference --configPath=backstop-example.json
-fin docker-compose run --rm backstop test --configPath=backstop-example.json
+BACKSTOPJS="docker run --rm -v $(pwd)/tests/backstop:/src docksal/backstopjs"
+$BACKSTOPJS reference --configPath=backstop-example.json
+$BACKSTOPJS test --configPath=backstop-example.json
 
 # HTML report link
 echo

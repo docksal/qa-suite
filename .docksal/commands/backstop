@@ -20,4 +20,4 @@ if [[ ! -d "docroot/tests/backstop" ]]; then
 fi
 
 # Run backstop
-fin docker-compose run --rm backstop "$@"
+docker run --rm -v $(pwd)/tests/backstop:/src docksal/backstopjs "$@"

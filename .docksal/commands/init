@@ -70,8 +70,9 @@ else
 fi
 
 if is_windows; then
-	echo-green "Add ${SITE_DOMAIN} to your hosts file (/etc/hosts), e.g.:"
-	echo-green "192.168.10.10  ${DOCKSAL_VIRTUAL_HOST}"
+	if [[ -z $DOCKER_NATIVE ]]; then IP='192.168.10.10'; else IP='127.0.0.1'; fi
+	echo-green "Add ${DOCKSAL_VIRTUAL_HOST} to your hosts file (/etc/hosts), e.g.:"
+	echo-green "${IP}  ${DOCKSAL_VIRTUAL_HOST}"
 	echo
 fi
 

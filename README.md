@@ -31,12 +31,11 @@ Follow [Docksal environment setup instructions](https://github.com/docksal/docks
 
 2. Initialize the stack
 
-    This will initialize local settings and download necessary dependencies 
-
     ```
     fin init
     ```
-
+    
+    Make sure to follow on-screen direction.
 
 ## Usage
 

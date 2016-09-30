@@ -1,0 +1,40 @@
+version: "2"
+
+services:
+  # BackstopJS
+  backstop:
+    hostname: backstop
+    image: docksal/backstopjs
+    volumes:
+      - ../tests/backstop:/src
+    # Keep container running
+    entrypoint: "top -b"
+
+  # Behat
+  behat:
+    hostname: behat
+    image: docksal/behat
+    volumes:
+      - ../tests/behat:/src
+    # Keep container running
+    entrypoint: "top -b"
+#    # Run a built-in web server for access to HTML reports
+#    ports:
+#     - 8000:8000
+#    entrypoint: "php -S 0.0.0.0:8000"
+
+  # Selenium
+  browser:
+    hostname: browser
+    # Pick/uncomment one
+    image: selenium/standalone-chrome
+    #image: selenium/standalone-firefox
+
+  # Web (reports)
+  web:
+    hostname: web
+    image: httpd:alpine
+    volumes:
+      - ../tests:/usr/local/apache2/htdocs/tests
+    environment:
+      - VIRTUAL_HOST=${DOCKSAL_VIRTUAL_HOST}

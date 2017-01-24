@@ -44,13 +44,13 @@ Follow [Docksal environment setup instructions](https://github.com/docksal/docks
 Run all features under `tests/behat/features`
 
 ```
-fin behat3
+fin behat
 ```
 
 Run a particular feature
 
 ```
-fin behat3 features/blackbox.feature
+fin behat features/blackbox.feature
 ```
 
 

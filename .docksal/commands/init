@@ -71,12 +71,12 @@ fi
 
 if is_windows; then
 	if [[ -z $DOCKER_NATIVE ]]; then IP='192.168.10.10'; else IP='127.0.0.1'; fi
-	echo-green "Add ${DOCKSAL_VIRTUAL_HOST} to your hosts file (/etc/hosts), e.g.:"
-	echo-green "${IP}  ${DOCKSAL_VIRTUAL_HOST}"
+	echo-green "Add ${VIRTUAL_HOST} to your hosts file (/etc/hosts), e.g.:"
+	echo-green "${IP}  ${VIRTUAL_HOST}"
 	echo
 fi
 
 echo -en "${green_bg} DONE! ${NC} "
-echo -e "Open ${yellow}http://${DOCKSAL_VIRTUAL_HOST}${NC} in your browser to verify the setup."
+echo -e "Open ${yellow}http://${VIRTUAL_HOST}${NC} in your browser to verify the setup."
 
 #-------------------------- END: Execution --------------------------------

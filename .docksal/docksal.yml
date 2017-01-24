@@ -1,4 +1,4 @@
-version: "2"
+version: "2.1"
 
 services:
   # BackstopJS
@@ -6,8 +6,8 @@ services:
     hostname: backstop
     image: docksal/backstopjs
     volumes:
-      - ../tests/backstop:/src
-    # Keep container running
+      - ${PROJECT_ROOT}/tests/backstop:/src
+    # Keep the container running
     entrypoint: "top -b"
 
   # Behat
@@ -15,13 +15,9 @@ services:
     hostname: behat
     image: docksal/behat
     volumes:
-      - ../tests/behat:/src
-    # Keep container running
+      - ${PROJECT_ROOT}/tests/behat:/src
+    # Keep the container running
     entrypoint: "top -b"
-#    # Run a built-in web server for access to HTML reports
-#    ports:
-#     - 8000:8000
-#    entrypoint: "php -S 0.0.0.0:8000"
 
   # Selenium
   browser:
@@ -35,6 +31,7 @@ services:
     hostname: web
     image: httpd:alpine
     volumes:
-      - ../tests:/usr/local/apache2/htdocs/tests
-    environment:
-      - VIRTUAL_HOST=${DOCKSAL_VIRTUAL_HOST}
+      - ${PROJECT_ROOT}/tests:/usr/local/apache2/htdocs/tests
+    labels:
+      - io.docksal.virtual-host=${VIRTUAL_HOST}
+      - io.docksal.project-root=${PROJECT_ROOT}

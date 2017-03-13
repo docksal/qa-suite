@@ -6,9 +6,7 @@ Features:
 
 - [Behat 3.x](https://github.com/Behat/Behat)
 - [BackstopJS 2.x](https://github.com/garris/BackstopJS)
-- [PhantomJS](http://phantomjs.org/), 
-[SlimerJS](https://slimerjs.org/) (with Firefox ESR), 
-[CasperJS](http://casperjs.org/)
+- [PhantomJS](http://phantomjs.org/), [SlimerJS](https://slimerjs.org/) (with Firefox ESR), [CasperJS](http://casperjs.org/)
 
 
 ## Setup instructions
@@ -17,7 +15,7 @@ Features:
 
 **This is a one time setup - skip this if you already have a working Docksal environment.**  
 
-Follow [Docksal environment setup instructions](https://github.com/docksal/docksal/blob/develop/docs/docksal-env-setup.md)
+Follow [Docksal environment setup instructions](http://docksal.readthedocs.io/en/master/getting-started/env-setup)
 
    
 ### Step #2: Project setup
@@ -35,7 +33,7 @@ Follow [Docksal environment setup instructions](https://github.com/docksal/docks
     fin init
     ```
     
-    Make sure to follow on-screen direction.
+    Make sure to follow on-screen directions.
 
 ## Usage
 

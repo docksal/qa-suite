@@ -18,8 +18,8 @@ NC='\033[0m'
 # Trim CR(\r) from the output, otherwise there will be issues passing it to the docker binary on Windows.
 BACKSTOPJS="docker exec $(docker-compose ps -q backstop | tr -d '\r') backstop"
 
-$BACKSTOPJS reference --configPath=backstop-${PROJECT_NAME}.json
-$BACKSTOPJS test --configPath=backstop-${PROJECT_NAME}.json
+$BACKSTOPJS reference --config=backstop-${PROJECT_NAME}.json
+$BACKSTOPJS test --config=backstop-${PROJECT_NAME}.json
 
 # HTML report link
 echo

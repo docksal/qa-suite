@@ -57,13 +57,13 @@ fin behat features/blackbox.feature
 1. Take reference screenshots
     
     ```
-    fin backstop reference --configPath=backstop-example.json
+    fin backstop reference --config=backstop-example.json
     ```
 
 2. Take test screenshots and compare
 
     ```
-    fin backstop test --configPath=backstop-example.json
+    fin backstop test --config=backstop-example.json
     ```
 
 By default BackstopJS is using PhantomJS to take screenshots.  

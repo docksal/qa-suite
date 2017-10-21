@@ -81,7 +81,7 @@ Run sample BDD (behavior-driven development) tests with Behat
 fin behat-example
 ```
 
-Open http://qa.docksal/tests/behat/reports/html/
+Open http://qa-suite.docksal/tests/behat/reports/html/
 
 Run sample VRT (visual regression testing) tests with BackstopJS
 
@@ -89,4 +89,4 @@ Run sample VRT (visual regression testing) tests with BackstopJS
 fin backstop-example
 ```
 
-Open http://qa.docksal/tests/backstop/data/example/reports/html/
+Open http://qa-suite.docksal/tests/backstop/data/example/reports/html/

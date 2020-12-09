@@ -23,7 +23,7 @@ Follow [Docksal environment setup instructions](http://docksal.readthedocs.io/en
 1. Clone this repo into your Projects directory
 
     ```
-    git clone git@github.com:docksal/qa-suite.git
+    git clone git@github.com:docksal/qa-suite.git qa-suite
     cd qa-suite
     ```
 
@@ -66,13 +66,13 @@ fin behat features/blackbox.feature
     fin backstop test --config=backstop-example.json
     ```
 
-By default BackstopJS is using PhantomJS to take screenshots.  
+By default, BackstopJS is using PhantomJS to take screenshots.  
 You can also use SlimerJS/Firefox by setting `"engine": "slimerjs"` 
 in the [configuration file](tests/backstop/backstop-example.json).
 
 ## Pre-configured sample commands 
 
-Pre-configured commands are stored in see `.docksal/commands`.   
+Pre-configured commands are in `.docksal/commands`.   
 They can be used as shortcuts/alternative to typing long lists of arguments every time.
 
 Run sample BDD (behavior-driven development) tests with Behat
@@ -90,3 +90,11 @@ fin backstop-example
 ```
 
 Open http://qa-suite.docksal/tests/backstop/data/example/reports/html/
+
+
+## Debugging
+
+For tests that utilize Chrome/Firefox via Selenium (`@javascript` tests), you can watch the browser in real time 
+inside the container with [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/).  
+
+Connect to `192.168.64.100:5900`, password: `secret`.

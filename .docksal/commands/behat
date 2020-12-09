@@ -13,7 +13,6 @@ yellow='\033[1;33m'
 NC='\033[0m'
 
 # Run Behat
-# Trim CR(\r) from the output, otherwise there will be issues passing it to the docker binary on Windows.
-BEHAT="docker exec $(docker-compose ps -q behat | tr -d '\r') behat"
+BEHAT="docker-compose exec behat behat"
 
-$BEHAT "$@"
+${BEHAT} "$@"

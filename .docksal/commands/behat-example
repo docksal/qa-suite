@@ -15,11 +15,10 @@ yellow='\033[1;33m'
 NC='\033[0m'
 
 # Run Behat
-# Trim CR(\r) from the output, otherwise there will be issues passing it to the docker binary on Windows.
-BEHAT="docker exec $(docker-compose ps -q behat | tr -d '\r') behat"
+BEHAT="docker-compose exec behat behat"
  
 mkdir -p "tests/behat/reports/$PROJECT_NAME"
-$BEHAT --colors --format=pretty --out=std --format=junit --out=reports/${PROJECT_NAME}/junit --format=html --out=reports/${PROJECT_NAME}/html features/blackbox.feature
+${BEHAT} --colors --format=pretty --out=std --format=junit --out=reports/${PROJECT_NAME}/junit --format=html --out=reports/${PROJECT_NAME}/html
 
 # HTML report link
 echo

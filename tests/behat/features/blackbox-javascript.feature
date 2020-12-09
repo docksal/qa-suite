@@ -5,10 +5,10 @@ Feature: Getbootstrap smoke testing
 
 
   Scenario: Open home page and find text
-    Given I am on "http://getbootstrap.com/"
-    And the size is desktop
-    Then I should see text matching "Build responsive, mobile-first projects on the web with the world's most popular front-end component library."
-    When I follow "Documentation"
+    Given I am on "https://getbootstrap.com/"
+    #And the size is desktop
+    Then I should see text matching "Build fast, responsive sites with Bootstrap."
+    When I follow "Get started"
     Then I should see text matching "Get started with Bootstrap"
-    When I follow "Examples"
-    Then I should see text matching "Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts."
+    When I follow "Starter template"
+    Then I should see text matching "Be sure to have your pages set up with the latest design and development standards"

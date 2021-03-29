@@ -15,7 +15,7 @@ Features:
 
 **This is a one time setup - skip this if you already have a working Docksal environment.**  
 
-Follow [Docksal environment setup instructions](http://docksal.readthedocs.io/en/master/getting-started/env-setup)
+Follow [Docksal environment setup instructions](https://docs.docksal.io/getting-started/setup/)
 
    
 ### Step #2: Project setup
